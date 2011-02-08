@@ -2,13 +2,16 @@
 # Distributed under the MIT license as included with this plugin.
 #
 
-INSANECHARACTERS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ-._~+[]|$!*(),{}^<>#%;/?:@&='
+INSANECHARACTERS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ-._~+[]|$!*(),{}^<>#%;?:@&='
 
 class String
   # Converts a string to a base x integer using y character set.
   def from_insane(base_val = 58, alpha = INSANECHARACTERS)
-    base_val = INSANECHARACTERS.size if base_val == :max
-    base_val = 63 if base_val == :url_safe
+    base_val = alpha.size if base_val == :max
+    if base_val == :url_safe
+      base_val = 63
+      alpha = INSANECHARACTERS
+    end
     raise ArgumentError, "Base Value is not valid. Integer, :max, :url_safe" unless base_val.kind_of? Integer
     raise ArgumentError, "Base size is too large for given character set. Please use a Base value larger than 0 and less than #{alpha.length}" if base_val > alpha.length or base_val <= 0    
     raise ArgumentError, "Character set needs to be larger than 0" if alpha.size <= 0
@@ -26,8 +29,11 @@ end
 class Integer
   # Converts a base10 integer to a base x string.
   def to_insane(base_val = 58, alpha = INSANECHARACTERS)
-    base_val = INSANECHARACTERS.size if base_val == :max
-    base_val = 63 if base_val == :url_safe
+    base_val = alpha.size if base_val == :max
+    if base_val == :url_safe
+      base_val = 63
+      alpha = INSANECHARACTERS
+    end
     raise ArgumentError, "Base Value is not valid. Integer, :max, :url_safe" unless base_val.kind_of? Integer
     raise ArgumentError, "Base size is too large for given character set. Please use a Base value larger than 0 and less than #{alpha.length}" if base_val > alpha.length or base_val <= 0    
     raise ArgumentError, "Character set needs to be larger than 0" if alpha.size <= 0

@@ -37,8 +37,16 @@ Paypal address: mailto:dougal.s@gmail.com
   27.to_insane(4,'A2Ph')
 
   # Other Inputs
-  # :url_safe uses characters that are RFC URL non reserved
-  # :max uses the number of characters 
+  # :url_safe uses the max number characters that are RFC URL non reserved
+  # :max uses the max number of characters for given character set. Default character set is 87
+  27.to_insane(:url_safe) 
+  27.to_insane(:max)
+
+== Info
+Default Character set. I choose not to use any slashes or quotes of any sort to prevent breaking
+
+  INSANECHARACTERS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ-._~+[]|$!*(),{}^<>#%;?:@&='
+
 == Credits
 
 Ryan Ong - http://ryangong.net
