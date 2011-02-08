@@ -16,17 +16,12 @@ Gem::Specification.new do |s|
     "README.rdoc"
   ]
   s.files = [
-    ".README.rdoc.swp",
-    ".Rakefile.swp",
     "CHANGELOG",
     "MIT-LICENSE",
     "README.rdoc",
     "Rakefile",
     "VERSION",
-    "lib/.base58.rb.swp",
-    "lib/.to_insane.rb.swp",
     "lib/to_insane.rb",
-    "test/.test_to_insane.rb.swp",
     "test/test_to_insane.rb",
     "to_insane.gemspec"
   ]
