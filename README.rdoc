@@ -1,4 +1,11 @@
-= Base58
+= To Insane!
+A small String and Integer extender that allow you to use a base larger than 36 and use custom character sets for base conversion.
+Default max of 67.
+Also include url safe integer conversion.
+
+=== Donate
+
+I did not really make this library I just modified it off this guy. Donate your money to him.
 
 If you find this library useful, please consider a donation to show your support!
 
@@ -8,32 +15,33 @@ Paypal address: mailto:dougal.s@gmail.com
 
 === Install
   
-Base58 is hosted by http://gemcutter.com. Please make sure you have added them to your gem sources.
-
-  $ sudo gem install base58
+  $ sudo gem install to_insane
 
 == Usage
 
   require 'rubygems'
-  require 'base58'
+  require 'to_insane'
   
-  # Int to Base58
-  Base58.encode(12345) # => 4ER
+  # Int to insane (Default: Base 58)
+  1337.to_insane # => n3
   
-  # Base58 to Int
-  Base58.decode('A2Ph') # => 6639914
+  # From insane to Int (Default: Base 58)
+  'A2Ph'.from_insane # => 7033619
 
-== RDoc Documentation
+  # Different Bases
+  'A2Ph'.from_insane(50) # => 4507467
+  4507467.to_insane(50)  # => 'A2Ph'
 
-You can view the rdoc documentation online[http://rdoc.info/projects/dougal/acts_as_indexed/].
+  # Different Character Sets
+  'A2Ph'.from_insane(4,'A2Ph') # => 27
+  27.to_insane(4,'A2Ph')
 
-== Problems, Comments, Suggestions?
-
-All of the above are most welcome. mailto:dougal.s@gmail.com
-
-
+  # Other Inputs
+  # :url_safe uses characters that are RFC URL non reserved
+  # :max uses the number of characters 
 == Credits
 
+Ryan Ong - http://ryangong.net
 Douglas F Shearer - http://douglasfshearer.com
 
 Test examples courtesy Fraser Speirs' Base58Encoder Objective-C class, http://gist.github.com/101674.
