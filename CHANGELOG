@@ -1,3 +1,10 @@
+= 0.2.0
+- Fixed :max
+
+= 0.1.0
+-initial conversion
+-FORK to to_insane
+
 = 0.0.4
 - Gracefully deals with bad input. Thanks to isnotvalid on Github.
 
