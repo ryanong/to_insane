@@ -33,8 +33,8 @@ Paypal address: mailto:dougal.s@gmail.com
   4507467.to_insane(50)  # => 'A2Ph'
 
   # Different Character Sets
-  'A2Ph'.from_insane(4,'A2Ph') # => 27
-  27.to_insane(4,'A2Ph')
+  'A2Ph'.from_insane(:max,'A2Ph') # => 27
+  27.to_insane(:max,'A2Ph')
 
   # Other Inputs
   # :url_safe uses the max number characters that are RFC URL non reserved
