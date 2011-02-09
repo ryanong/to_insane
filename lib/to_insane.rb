@@ -13,7 +13,7 @@ class String
       alpha = INSANECHARACTERS
     end
     raise ArgumentError, "Base Value is not valid. Integer, :max, :url_safe" unless base_val.kind_of? Integer
-    raise ArgumentError, "Base size is too large for given character set. Please use a Base value larger than 0 and less than #{alpha.length}" if base_val > alpha.length or base_val <= 0    
+    raise ArgumentError, "Base size is too large for given character set. Please use a Base value larger than 1 and less than #{alpha.length}" if base_val > alpha.length or base_val <= 1    
     raise ArgumentError, "Character set needs to be larger than 0" if alpha.size <= 0
     raise ArgumentError, "Character set has duplicate characters" if alpha.size != alpha.split(//).uniq.size
     int_val = 0
@@ -35,7 +35,7 @@ class Integer
       alpha = INSANECHARACTERS
     end
     raise ArgumentError, "Base Value is not valid. Integer, :max, :url_safe" unless base_val.kind_of? Integer
-    raise ArgumentError, "Base size is too large for given character set. Please use a Base value larger than 0 and less than #{alpha.length}" if base_val > alpha.length or base_val <= 0    
+    raise ArgumentError, "Base size is too large for given character set. Please use a Base value larger than 1 and less than #{alpha.length}" if base_val > alpha.length or base_val <= 2
     raise ArgumentError, "Character set needs to be larger than 0" if alpha.size <= 0
     raise ArgumentError, "Character set has duplicate characters" if alpha.size != alpha.split(//).uniq.size
     char_ref = alpha[0..base_val]
