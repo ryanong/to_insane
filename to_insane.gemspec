@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{to_insane}
-  s.version = "0.2.1"
+  s.version = "0.2.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ryan Ong"]
-  s.date = %q{2011-02-08}
+  s.date = %q{2011-02-16}
   s.description = %q{ToInsane allows you to convert strings and integers to a Base larger than the default max of 36 and use a custom character set}
   s.email = %q{ryanong@gmail.com}
   s.extra_rdoc_files = [
