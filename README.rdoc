@@ -50,6 +50,7 @@ Default Character set. I choose not to use any slashes or quotes of any sort to 
 == Credits
 
 Ryan Ong - http://ryangong.net
+
 Douglas F Shearer - http://douglasfshearer.com
 
-Test examples courtesy Fraser Speirs' Base58Encoder Objective-C class, http://gist.github.com/101674.
+Developed for and with CarZen.com

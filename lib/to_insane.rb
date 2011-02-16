@@ -6,7 +6,9 @@ INSANECHARACTERS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ
 
 class String
   # Converts a string to a base x integer using y character set.
-  def from_insane(base_val = 58, alpha = INSANECHARACTERS)
+  def from_insane(base_val = nil, alpha = nil)
+    base_val ||= 58
+    alpha ||= INSANECHARACTERS
     base_val = alpha.size if base_val == :max
     if base_val == :url_safe
       base_val = 63
@@ -28,7 +30,9 @@ end
 
 class Integer
   # Converts a base10 integer to a base x string.
-  def to_insane(base_val = 58, alpha = INSANECHARACTERS)
+  def to_insane(base_val = nil, alpha = nil)
+    alpha ||= INSANECHARACTERS
+    base_val ||= 58
     base_val = alpha.size if base_val == :max
     if base_val == :url_safe
       base_val = 63
